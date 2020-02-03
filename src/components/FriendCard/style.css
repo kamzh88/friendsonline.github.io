@@ -8,6 +8,16 @@
   box-shadow: 0 3px 6px #999, 0 3px 6px #999;
   text-align: left;
 }
+.addfriends,
+.myfriends {
+  display: flex;
+  flex-flow: row wrap;
+  overflow: auto; 
+  align-content: flex-start;
+  justify-content: space-around;
+  padding: 20px;
+  height: 100%;
+}
 
 .card > .img-container {
   height: 60%;
