@@ -13,25 +13,27 @@ class App extends Component {
 
   removeFriend = id => {
     // console.log(id);  
+    
     const friends = this.state.friends.filter(friend => friend.id !== id);
     this.setState({ friends });
   };
 
   addFriend = id => {
     console.log(id);
-    const friends = friends.filter(friend => !friend.state.map())
+    // const friends = friends.filter(friend => !friend.state.map())
     
     
     // this.setState({ friends })
   }
 
   render() {
-    const addFriends = friends.filter(friend => friend.state == false);
+    const addFriends = friends.filter(friend => friend.state === false);
+    const myFriends = this.state.friends.filter(friend => friend.state === true)
     return (
       <Wrapper>
         <div className="myfriends">
           <h1 className="title">Friends List</h1>
-          {this.state.friends.map(friend => (
+          {myFriends.map(friend => (
             <FriendCard
               removeFriend={this.removeFriend}
               id={friend.id}
@@ -43,7 +45,7 @@ class App extends Component {
             />))}
         </div>
         <div className="addfriends">
-          <h1 className="title">Add Friends</h1>
+          <h1 className="title">People</h1>
           {addFriends.map(friend => (
             <AddFriend
               removeFriend={this.addFriend}
